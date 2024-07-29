@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Data Demo</title>
+    <link href="css/tailwind-v2.2.19.min.css" rel="stylesheet">
+    <style>
+        .loader {
+            border-top-color: #3498db;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-6">
+    <h1 class="text-3xl font-bold mb-6">Interactive Data Demo</h1>
+    <div class="container mx-auto">
+        <div id="chart-container" class="relative">
+            <div id="loading" class="absolute inset-0 flex items-center justify-center bg-white">
+                <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12"></div>
+                <span class="ml-4 text-xl">Loading chart...</span>
+            </div>
+            <div id="chart" class="mb-6"></div>
+        </div>
+        <button id="toggle-button" class="mb-4 bg-blue-500 text-white px-4 py-2 rounded">Show Data Table</button>
+        <div id="table-container" class="hidden">
+            <table class="table-auto w-full bg-white shadow-md rounded-lg">
+                <thead id="table-head" class="bg-gray-200">
+                    <!-- Table head will be generated dynamically -->
+                </thead>
+                <tbody id="data-body">
+                    <!-- Data will be inserted here by JavaScript -->
+                </tbody>
+                <tfoot id="table-foot" class="bg-gray-200">
+                    <!-- Table foot will be generated dynamically -->
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/plotly-v1.58.5.min.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/table.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
